@@ -1,0 +1,201 @@
+<div class="card">
+
+  <div class="card-header">Calcuadora de colas</div>
+
+  <div class="card-body">
+
+
+<div class="form-group d-flex">
+          <input [(ngModel)]='landa' type="number" name="num3" class="form-control" placeholder="λ">
+
+          <input [(ngModel)]='mew' type="number" name="num4" class="form-control" placeholder="μ">
+
+</div>
+
+
+<div class="form-group d-flex">
+          <input [(ngModel)]='n' type="number" name="n" class="form-control" placeholder="n (numero de clientes)">
+
+          <input [(ngModel)]='t' type="number" name="t" class="form-control" placeholder="t (tiempo de servicio)">
+          <input [(ngModel)]='T1' type="number" name="T1" class="form-control" placeholder="T (tiempo objetivo)">
+
+</div>
+<br>
+<div class="form-group d-flex">
+<div class="col-md-6">
+  <label for="exampleInputEmail1">Cambiar las unidades de λ</label>
+<select class="custom-select" [(ngModel)]='cambiarLanda'>
+<option value="0">No cambiar unidades</option>
+<option value="1">Cambiar de personas/minuto a personas/hora</option>
+<option value="2">Cambiar de personas/hora a personas/minuto</option>
+</select>
+
+</div>
+
+
+<div class="col-md-6">
+  <label for="exampleInputEmail2">Cambiar las unidades de μ</label>
+<select class="custom-select" [(ngModel)]='cambiarMew'>
+<option value="0">No cambiar las unidades</option>
+<option value="1">Cambiar de personas/minuto a personas/hora</option>
+<option value="2">Cambiar de personas/hora a personas/minuto</option>
+</select>
+<div class="invalid-feedback">Example invalid custom select feedback</div>
+</div>
+</div>
+
+
+
+      <div class=" align-items-center">
+        <button class="btn btn-outline-primary" (click)="first()">Calcular Colas</button>&nbsp;&nbsp;
+        <button class="btn btn-outline-dark" (click)="P1()">Calcular Probabilidad</button>
+      </div>
+  </div>
+
+</div>
+
+<div ng-controller="main">
+<div *ngIf="Nep">
+<table class="table table-striped">
+
+<tr>
+  <th><h4>Po es igual a: {{Po}}</h4></th>
+
+
+  <th><h4>Lq es igual a: {{lq}}</h4><br></th>
+</tr>
+
+
+<tr>
+
+
+<th><h4>Ls es igual a: {{ls}}</h4><br></th>
+
+
+<th><h4>Wq es igual a: {{wq}}</h4><br></th>
+</tr>
+
+<tr>
+
+<th><h4>Ws es igual a: {{ws}}</h4><br></th>
+
+<th><h4>p es igual a: {{p}}</h4><br></th>
+</tr>
+</table>
+</div>
+
+<div *ngIf="Plutia">
+<div class="row">
+  <div class="col-md-4">
+    <canvas id="lineChart" width = "1px" height="1px"></canvas>
+  </div>
+
+  <div class="col-md-4">
+    <canvas id="lineChart2"width = "1px" height="1px"></canvas>
+
+  </div>
+
+  <div class="col-md-4">
+    <canvas id="lineChart3"width = "1px" height="1px"></canvas>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <canvas id="lineChart4"width = "1px" height="1px"></canvas>
+    </div>
+
+    <div class="col-md-4">
+    <canvas id="lineChart5"width = "1px" height="1px"></canvas>
+</div>
+<div class="col-md-4">
+<canvas id="lineChart6"width = "1px" height="1px"></canvas>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="Gear">
+<table class="table table-striped">
+
+<tr>
+  <th><h4>P(n) es igual a: {{Pn}}</h4></th>
+
+
+  <th><h4>P(t<T) es igual a: {{PtT}}</h4><br></th>
+</tr>
+<tr>
+  <th><h4>Pn es igual a: {{Pnn}}</h4></th>
+
+
+  <th><h4>P(Wq>t) es igual a: {{Pwqt}}</h4><br></th>
+</tr>
+<tr>
+  <th><h4>P(Ws>t) es igual a: {{Pwst}}</h4></th>
+
+
+</tr>
+
+
+
+</table>
+
+<div class="row">
+  <div class="col-md-4">
+<canvas id="lineChart7"width = "1px" height="1px"></canvas>
+</div>
+<div class="col-md-4">
+<canvas id="lineChart8"width = "1px" height="1px"></canvas>
+</div>
+<div class="col-md-4">
+<canvas id="lineChart9"width = "1px" height="1px"></canvas>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+<canvas id="lineChart10"width = "1px" height="1px"></canvas>
+</div>
+<div class="col-md-6">
+<canvas id="lineChart11"width = "1px" height="1px"></canvas>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<script>
+    function main($scope) {
+        $scope.Nep = false;
+        $scope.Gear = false;
+        $scope.Plutia = false;
+        $scope.Uzume = false;
+        var euler = Math.E;
+
+    }
+
+
+
+
+</script>
